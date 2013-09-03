@@ -1,0 +1,21 @@
+.hide { display: none; }
+.fr{ float: right; }
+.fl { float: left; }
+input[type='text'],input[type='number'],textarea {font-size:1em;}
+cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}

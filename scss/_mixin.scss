@@ -1,0 +1,21 @@
+@mixin border-box{ 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+  *behavior: url(../js/boxsizing.htc); 
+}
+
+@mixin breakpoint($point) {
+  @if $point == raikachu {
+    @media (min-width: 100em) { @content; }
+  }
+  @if $point == raichu {
+    @media (min-width: 75em) { @content; }
+  }
+  @else if $point == pikachu {
+    @media (min-width: 53em) { @content; }
+  }
+  @else if $point == pichu {
+    @media (min-width: 30em) { @content; }
+  }
+}

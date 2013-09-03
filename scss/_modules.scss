@@ -1,0 +1,455 @@
+// blueyish gray $sidebar1: #43484d;
+$sidebar1: #3e4142;
+
+// General
+.button{
+	color: #8B8B8B;
+	background: #E7E7E7;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	line-height: 1;
+	font-weight: bold;
+	padding: 1em 1.5em;
+	text-align: center;
+	border: 0;
+	display: block;
+	width: 100%;
+	@include border-radius(0.2em);
+	@include transition(all linear 0.1s);
+	&:hover{
+		border: 0;
+		color: white;
+	}
+	@include breakpoint(pichu){
+		&.read_more{
+			@include inline-block();
+			width: auto;
+		}
+	}
+	&.read_more{
+		&:after{
+			content: "\E762";
+			font-family: 'entypo', sans-serif;
+			margin-left: 0.5em;
+			color: inherit;
+		}
+	}
+}
+
+// Header
+.header .logo{
+	top: 0.5em;
+	position: relative;
+	@include inline-block();
+	@include breakpoint(pikachu){
+		top: 1em;
+		padding: 0 1.2em;
+	}
+	&:hover{
+		border: 0;
+	}
+	img{
+		display: block;
+		width: 75%;
+		@include breakpoint(pikachu){
+			min-width: 7.5em;
+			width: 100%;
+		}
+		@include breakpoint(raichu){
+			width: 100%;
+		}
+	}
+}
+button.ctx{
+	border: 0;
+	background: transparent;
+	color: white;
+	font-size: 1.6em;
+	padding: 0 0.6em;
+	margin: 0;
+	height: 100%;
+	@include transition(background, linear, .1s);
+	&:hover{
+		cursor: pointer;
+	}
+	&{
+		@include breakpoint(pikachu){
+			display: none;
+		}
+	}
+}
+
+// Sidebar1 & Sidebar2
+.widget{
+	//border-bottom: 1px solid lighten($sidebar1, 8%);
+	position: relative;
+	clear: both;
+	margin: 0.8em 0;
+	h4{
+		text-transform: uppercase;
+		color: #333;
+		font-size: 0.8em;
+		padding: 0.8em;
+	}
+	p{
+		font-size: 0.9em;
+	}
+	a{
+		border: 0;
+	}
+	li a:hover{
+		border: 0;
+	}
+	.inner{
+		padding: 0 0.8em;
+	}
+	&.sf_c{
+		margin: 0;
+		.inner{
+			padding: 1em 1.2em 1em 1.2em;
+		}
+	}
+}
+
+.sidebar1{
+	background: $sidebar1;
+	h4{
+		color: lighten($sidebar1, 18%);
+		//background: #323438;
+		//margin-bottom: 1em;
+		//border-bottom: 1px solid lighten($sidebar1, 5%);
+	}
+	*{
+		color: darken(white, 25%);
+
+	}
+	p a{
+		color: darken(white, 10%);
+	}
+	b, strong, span{
+		color: darken(white, 10%);
+		font-size: 0.9em;
+	}
+	a:hover{
+		color: white;
+	}
+	.widget{
+		//border-bottom: 1px solid lighten($sidebar1, 10%);
+	}
+}
+
+.widget ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+	li{
+		margin: 0 0 0.6em 0;
+		a, &{
+			font-size: 0.9em;
+  			font-family: 'Open Sans Semibold';
+		}
+		&:last-child{
+			margin: 0 !important;
+		}
+	}
+	&.social{
+		//text-align: center;
+		li{
+			margin: 0 0.2em;
+			//width: 20%;
+			//width: 16.6%;
+			//width: 14.285%;
+			@include inline-block;
+			a{
+				font-size: 2em;
+				display: block;
+				@include transition(all, linear, 0.2s);
+				&:hover{
+					opacity: .7;
+				}
+				&.rss{
+					width: 1.813em;
+					height: 1.813em;
+					line-height: 1.813em;
+					font-size: 1.1em;
+					text-align: center;
+					color: white;
+					background: #ff6600;
+					@include border-radius(2em);
+				}
+				&.fb{
+					color: #3b5998;
+				}
+				&.twt{
+					color: #1eb9f0;
+				}	
+				&.gp{
+					color: #d95433;
+				}
+			}
+		}
+	}
+	&.post_info{
+		b{
+			//color: gray;
+  			font-family: 'Open Sans Bold';
+  			//text-transform: uppercase;
+  			//margin-bottom: 0.2em;
+  			display: block;
+		}
+		&.fr{
+			@include breakpoint(pikachu){
+				width: 100%;
+			}
+			@include breakpoint(raichu){
+				width: auto;
+			}
+		}
+		&.fr{
+			li{
+				margin-top: 1em;
+				@include breakpoint(raichu){
+					margin-top: 0;
+				}
+			}
+		}
+		.button{
+			padding: 0.89em 2.5em;
+		}
+	}
+	&.list{
+		padding:  0;
+		li{
+			margin: 0;
+			&.current{
+				a{
+					background: lighten($sidebar1, 5%);
+				}
+			}
+			a{
+				//padding: 0.988em 1.462em 0.988em 1.462em;
+				padding: 0.7em 0.8em;
+				clear: both;
+				display: block;
+				@include transition(all, linear, 0.1s);
+				&:hover{
+					background: lighten($sidebar1, 5%);
+					.count{
+						color: white;
+					}
+				}
+				.count{
+					color: lighten($sidebar1, 20%);
+					height: 2.1em;
+					width: 2.1em;
+					line-height: 2.1em;
+					text-align: center;
+					float: right;
+					position: relative;
+					bottom: 0.4em;
+					font-weight: bold;
+					@include inline-block;
+					@include border-radius(.2em);
+					@include transition(all, linear, 0.2s);
+				}
+			}
+		}
+	}
+	&.serie{
+		li{
+			counter-increment: boxes;
+			a{
+				&:before{
+					content: counter(boxes);
+					color: lighten($sidebar1, 25%);
+					margin-right: 0.5em;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.button{
+		background: lighten($sidebar1, 5%);
+		font-family: 'Open Sans Bold';
+		text-transform: none;
+		span.entypo{
+			display: inline;
+			margin-right: 0.6em;
+		}
+		&:hover{
+			background: lighten($sidebar1, 10%);
+		}
+	}
+}
+.sf{
+	background: darken($sidebar1, 6%);
+	border: 0;
+	padding: 0.6em 0.6em 0.6em 2.1em;
+	width: 100%;
+	color: #FFF;
+	font-size: 0.9em;
+	margin: 0;
+	@include border-radius(5em);
+	@include transition(all, linear, 0.2s);
+	& + .entypo{
+		color: #969798;
+		position: absolute;
+		left: 1.3em;
+		top: 33%;
+		font-size: 1.4em;
+	}
+	&:hover{
+		background: darken($sidebar1, 12%);
+	}
+	&:active, &:focus{
+		outline: none;
+		background: white;
+		color: $sidebar1;
+	}
+}
+.center:before{
+	content: "";
+	height: 100%;
+	background: $sidebar1;
+	display: block;
+	position: absolute;
+	width: 20em;
+	left: -20em;
+	z-index: 0;
+}
+// Center
+.filter{
+	text-align: center;
+	clear: both;
+	@include breakpoint(pikachu){
+		text-align: center;
+		clear: both;
+		top: 0;
+		position: absolute;
+	}
+	li{
+		display: inline;
+		a{
+			padding: 0.7em 0;
+			//width: 20%;
+			width: 16.66666666%;
+			display: inline-block;
+			//text-transform: uppercase;
+			line-height: 1.2em;
+			//border: 0;
+			position: relative;
+			@include transition(all, linear, .1s);
+		}
+		span.text{
+			color: white;
+			font-family: 'Open Sans Semibold';
+			font-size: 0.8em;
+			display: none;
+			@include breakpoint(pichu){
+				display: block;
+			}
+		}
+		span.icon{
+			font-size: 1.3em;
+			font-family: 'entypo';
+			color: white;
+			display: block;
+			/*@include breakpoint(pikachu){
+				display: inline;
+				margin-right: 0.5em;
+				position: relative;
+				top: 2px;
+				font-size: 1.4em;
+			}*/
+		}
+		span{
+		}
+	}
+	li.current, li:hover{
+		/*a{
+			background: white;
+			border: 0;
+		}*/
+		a{
+		}
+	}
+}
+/* Loop / Posts */
+.loop{
+}
+.post{
+	background: white;
+	//margin-bottom: 6px;
+	padding: 1.2em 1.2em 1.8em 1.2em;
+	@include breakpoint(pikachu){
+		padding: 1.8em;
+	}
+	h1{
+		font: 1.5em/1.1em "Open Sans Bold", sans-serif;
+		letter-spacing: -0.08em;
+		margin: 0 0 0.25em 0;
+		@include breakpoint(pichu){
+			font-size: 2em;
+		}
+		a{
+			color: inherit;
+			font: inherit;
+			&:hover{
+				border: 0;
+				color: #333;
+			}
+		}
+
+	}
+	img{
+		display: block;
+		width: 100%;
+	}
+	.thumbnail{
+		margin: 0em 1em 0em 0em;
+		width: 26.5%;
+		max-width: 12.5em;
+		float: left;
+		overflow: hidden;
+	}
+	.tags{
+		a{
+			font-weight: bold;
+			font-size: 0.9em;
+		}
+	}
+	.author{
+		margin-bottom: 0.3em;
+		font-size: 0.9em;
+	}
+	ul.meta{
+		margin-bottom: 0.8em;
+		padding: 0.25em 0;
+		//background: #FAFAFA;
+		//@include background-image(linear-gradient(color-stops(#FFF, #F7F7F7)));
+		border-bottom: 1px solid #E6E6E6;
+		li{
+			display: inline-block;
+			margin-right: 1em;
+			&.date span{
+				color: gray;
+			}
+			span, a{
+				font-size: 0.8em;
+			}
+			a:hover{
+				border: 0;
+			}
+			.entypo{
+				margin-right: 0.5em;
+				color: #bbbbbb;
+			}
+		}
+	}
+	p{
+		line-height: 1.5em;
+		font-size: 0.9em;
+		margin-bottom: 1.5em;
+	}
+}

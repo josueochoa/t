@@ -1,0 +1,43 @@
+*,
+*:before,
+*:after {
+  @include border-box();
+  font-family: 'Open Sans', sans-serif;
+  color: #212121;
+}
+html, body{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	background: #ededed;
+}
+.entypo{
+  font-family: 'entypo', sans-serif !important;
+}
+.entypo-before{
+	&:before{
+		content: attr(data-icon);
+		font-family: 'entypo', sans-serif;
+		margin-right: 0.5em;
+		color: inherit;
+	}
+}
+.entypo-after{
+	&:after{
+		content: attr(data-icon);
+		font-family: 'entypo', sans-serif;
+		margin-left: 0.5em;
+		color: inherit;
+	}
+}
+a{
+	text-decoration: none;
+}
+.nop{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+h1, h2, h3, h4, p{
+	margin: 0;
+}

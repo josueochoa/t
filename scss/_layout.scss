@@ -1,0 +1,122 @@
+$maxwidth: 100em;
+
+.wrap{
+	width: 100%;
+	max-width: 100em;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	position: relative;
+	z-index: 2;
+	@include transition(all, linear, 0.1s);
+}
+.header{
+	width: 100%;
+	top: 0;
+	text-align: center;
+	height: 2.5em;
+	@include breakpoint(pikachu){
+		text-align: left;
+		height: 3.6em;
+		width: 20%;
+		//max-width: 20em;
+	}
+	@include breakpoint(raikachu){
+		width: 20em;
+	}
+	//@include transition(all, linear, 0.1s);
+
+}
+.content{
+	position: relative;
+	@include breakpoint(pikachu){
+		margin-top: 0;
+	}
+}
+.sidebar1, .sidebar2{
+	width: 20%;
+	overflow: auto;
+	//-webkit-overflow-scrolling: touch;
+	//max-width: 20em;
+	//padding: 0 1.5em;
+}
+.filter{
+	@include breakpoint(pichu){
+		width: 100%;
+	}
+	@include breakpoint(pikachu){
+		width: 80%;
+		left: 20%;
+	}
+	@include breakpoint(raichu){
+		width: 60%;
+	}
+	@include breakpoint(raikachu){
+		width: 60em;
+		left: 20em;
+	}
+}
+.sidebar1{
+	position: fixed;
+	z-index: 1;
+	//@include translateX(-20em);
+	width: 20em;
+	top: 0;
+	@include breakpoint(pikachu){
+		top: 3.6em;
+		left: 0;
+		height: auto;
+		width: 20%;
+		position: absolute;
+		z-index: 3;
+	}
+	@include breakpoint(raikachu){
+		width: 20em;
+	}
+	@include transition(all, linear, 0.1s);
+}
+.center{
+	min-width: 60%;
+	background: #FFF;
+	min-height: 70em;
+	position: relative;
+	@include breakpoint(pikachu){
+		width: 80%;
+		margin-left: 20%;
+		float: left;
+		//max-width: 1200px;
+	}
+	@include breakpoint(raichu){
+		width: 60%;
+	}
+
+}
+body.toggled{
+	overflow: hidden;
+	@include breakpoint(pichu){
+		overflow: visible;
+	}
+	.sidebar1{
+		height: 100% !important;
+		z-index: 3;
+	}
+	.wrap{
+		@include translateX(20em);
+	}
+	// Quitar margen boton de descarga/demo cuando el menu esta toggled
+	.widget ul.post_info.fr li{
+		margin-top: 0;
+	}
+}
+.sidebar2{
+	display: none;
+	@include breakpoint(raichu){
+		float: left;
+		display: block;
+		position: relative;
+		top: -3.5em;
+	}
+}
+.footer{
+	
+}

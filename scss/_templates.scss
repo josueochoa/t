@@ -1,0 +1,157 @@
+$base: #DD3B2A;
+/* 
+WEB DD3B2A
+PS 2491db
+DEV 228613
+WP 2b759a
+MOBI 81a32b
+*/
+
+$light1: lighten($base, 4%);
+$light2: lighten($base, 8%);
+$light3: lighten($base, 12%);
+$light4: lighten($base, 16%);
+$light5: lighten($base, 20%);
+$light6: lighten($base, 24%);
+
+$dark1: darken($base, 4%);
+$dark2: darken($base, 8%);
+$dark3: darken($base, 12%);
+$dark4: darken($base, 16%);
+$dark5: darken($base, 20%);
+$dark6: darken($base, 24%);
+
+.header{
+	background: $base;
+}
+a{
+	color: $base;
+    -webkit-tap-highlight-color: rgba($base, 0.3);
+}
+a:hover{
+	color: $dark2;
+	border-bottom: 1px solid $base;
+}
+.button:hover{
+	background: $dark2;
+}
+button.ctx{
+	//background: $dark1;
+	-webkit-tap-highlight-color: $dark1;
+}
+button.ctx:hover, .toggled button.ctx{
+	background: $dark1;
+	//background: $dark1;
+}
+// Fix fondo filter android / safari
+.filter{
+	//@include background-image(linear-gradient(left right, $dark5, $dark1));
+}
+.filter li a{
+	background: $dark2;
+	//border-right: 1px solid $base;
+	&:hover{
+		background: $dark1;
+		border-bottom: 0;
+	}
+}
+.filter li.current a{
+	background: $dark3;
+	border-bottom: 0;
+}
+@include breakpoint(pikachu){
+	.filter li a{
+		background: $dark1;
+		//border-right: 1px solid $light1;
+		&:hover{
+			background: $base;
+		}
+	}
+	.filter li.current a{
+		background: $dark2;
+		border-bottom: 0;
+	}
+}
+.filter li:nth-child(1){
+    a{
+    	//border-left: 1px solid $light1;
+		//background: $dark1; color: $dark1;
+	}
+	a:hover{
+
+	}
+	.arr{
+		
+	}
+}
+.filter li:nth-child(2){
+    a{
+		//background: $dark2; color: $dark2;
+	}
+	a:hover{
+
+	}
+	.arr{
+		
+	}
+}
+.filter li:nth-child(3){
+    a{
+		//background: $dark3; color: $dark3;
+	}
+	a:hover{
+
+	}
+	.arr{
+		
+	}
+}
+.filter li:nth-child(4){
+    a{
+		//background: $dark4; color: $dark4;
+	}
+	a:hover{
+
+	}
+	.arr{
+		
+	}
+}
+.filter li:nth-child(5){
+    a{
+		//background: $dark5; color: $dark5;
+	}
+	a:hover{
+
+	}
+	.arr{
+		
+	}
+}
+.filter li:nth-child(6){
+    a{
+		//background: $dark6; color: $dark6;
+	}
+	a:hover{
+
+	}
+	.arr{
+		
+	}
+}
+.filter li:hover a, .filter li.current a{
+	//background: $dark3;
+	&:before{
+		height: 10px;
+		width: 10px;
+		background: blue;
+		position: absolute;
+		top: 0px;
+		border-radius: 2em;
+	}
+	//box-shadow: 0px 5px 0px 0px white inset;
+
+}
+.filter li.current .arr{
+	bottom: -0.5em;
+}
